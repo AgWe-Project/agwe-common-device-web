@@ -50,4 +50,4 @@ function broadcast() {
   console.log('finsihed sending message');
 }
 
-setInterval(broadcast, 30000)
+setInterval(broadcast, 15000)
