@@ -30,7 +30,7 @@ function openDB(){
   };
   db_req.onupgradeneeded = function (event) {
     var db = event.target.result;
-    EVENT.STORES.forEach(function(store_name){
+    EVENT_STORES.forEach(function(store_name){
       db.createObjectStore(store_name, { keyPath: "timestamp" });
     });
   };
