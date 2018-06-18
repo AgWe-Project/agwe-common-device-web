@@ -24,7 +24,7 @@ module.exports = function handler (req, res){
     path = (path === '/dashboard.js') ? '/dashboard.js' : "/index.html";
     fs.readFile(__dirname + path, servefile);
   }else if (router[path] !== undefined) {
-    fs.readFile(_path.resolve(_dirname + router[path]), servefile);
+    fs.readFile(_p.resolve(_dirname + router[path]), servefile);
   }else{
     res.writeHead(404);
     res.end();
