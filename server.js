@@ -22,7 +22,7 @@ module.exports = function handler (req, res){
   var path = url.parse(req.url).pathname;
   if (path === '/dashboard.js' || path === '/index.html' || path === "/"){
     path = (path === '/dashboard.js') ? '/dashboard.js' : "/index.html";
-    fs.readFile(__dirname + pathß, servefile);
+    fs.readFile(__dirname + path, servefile);
   }else if (router[path] !== undefined) {
     fs.readFile(_path.resolve(_dirname + router[path]), servefile);
   }else{
