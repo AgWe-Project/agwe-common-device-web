@@ -46,7 +46,8 @@ function broadcast() {
 
 	var client = dgram.createSocket("udp4");
 	client.send(message, 0, message.length, 1900, "239.255.255.250");
-	client.close();
+  client.close();
+  console.log('finsihed sending message');
 }
 
 setInterval(broadcast, 30000)
