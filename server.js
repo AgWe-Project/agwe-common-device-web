@@ -30,3 +30,23 @@ module.exports = function handler (req, res){
     res.end();
   }
 };
+
+var dgram = require('dgram'); // dgram is UDP
+
+function broadcast() {
+	
+	var message = new Buffer(
+		"M-SEARCH * HTTP/1.1\r\n" +
+		"HOST:239.255.255.250:1900\r\n" +
+		"MAN:\"ssdp:discover\"\r\n" +
+		"ST:ssdp:all\r\n" + // Essential, used by the client to specify what they want to discover, eg 'ST:ge:fridge'
+		"MX:1\r\n" + // 1 second to respond (but they all respond immediately?)
+		"\r\n"
+	);
+
+	var client = dgram.createSocket("udp4");
+	client.send(message, 0, message.length, 1900, "239.255.255.250");
+	client.close();
+}
+
+setInterval(broadcast, 30000)
