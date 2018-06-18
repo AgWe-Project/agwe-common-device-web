@@ -3,9 +3,9 @@ var fs = require('fs');
 var path = require('path');
 
 var router = {
-  "/chart.js": "../node_modules/chart.js/dist/Chart.js",
+  "/chart.js": "/../node_modules/chart.js/dist/Chart.js",
   "/bootstrap.min.css": "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-  "/bootstrap-theme.min.css": "../node_modules/bootstrap/dist/css/bootstrap-theme.min.css"
+  "/bootstrap-theme.min.css": "/../node_modules/bootstrap/dist/css/bootstrap-theme.min.css"
 };
 
 module.exports = function handler (req, res){
